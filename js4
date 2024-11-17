@@ -1,0 +1,4 @@
+//<![CDATA[
+function insertAfter(addition,target)a{var parent=target.parentNode;if(parent.lastChild==target){parent.appendChild(addition)}else{parent.insertBefore(addition,target.nextSibling)}}
+var adscont=document.getElementById("seoneurons-content1");var target=document.getElementById("seoneurons-target");var linebreak=target.getElementsByTagName("br");if(linebreak.length>0){insertAfter(adscont,linebreak[1])}
+//]]>
