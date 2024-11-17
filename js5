@@ -1,0 +1,13 @@
+const loadScriptsTimer=setTimeout(loadScripts,5*1000);const userInteractionEvents=[&quot;mouseover&quot;,&quot;keydown&quot;,&quot;touchstart&quot;,&quot;touchmove&quot;,&quot;wheel&quot;];userInteractionEvents.forEach(function(event){window.addEventListener(event,triggerScriptLoader,{passive:!0})});function triggerScriptLoader(){loadScripts();clearTimeout(loadScriptsTimer);userInteractionEvents.forEach(function(event){window.removeEventListener(event,triggerScriptLoader,{passive:!0})})}function loadScripts(){document.querySelectorAll(&quot;script,iframe[data-type=&#39;lazy&#39;]&quot;).forEach(function(elem){elem.setAttribute(&quot;src&quot;,elem.getAttribute(&quot;data-src&quot;))})}</script>
+
+<!-- Remove Comment line to enable facebook widget but this will reduce pagespeed of your website -->
+<!-- <script type='text/javascript'>
+//<![CDATA[
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+//]]>
